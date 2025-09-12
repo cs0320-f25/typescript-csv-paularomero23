@@ -20,3 +20,41 @@ test("parseCSV yields only arrays", async () => {
     expect(Array.isArray(row)).toBe(true);
   }
 });
+
+// Tests I wrote:
+
+test("parseCSV fields with commas inside quotes", async () => {
+  const results = await parseCSV(path.join(__dirname, "../data/people2.csv"));
+
+  expect(results).toHaveLength(1);
+  expect(results[0]).toHaveLength(3);
+  expect(results[0][0]).toEqual(["Caesar"]);
+  expect(results[0][1]).toEqual(["Julius"]);
+  expect(results[0][2]).toEqual(['veni, vidi, vici']);
+});
+
+test("parseCSV handles empty files", async () => {
+  const results = await parseCSV(path.join(__dirname, "../data/people3.csv"));
+
+  expect(results).toHaveLength(4);
+  expect(results[0]).toEqual(["Alice", "23", "", "New York"]);
+  expect(results[1]).toEqual(["Julius", "", "Salad Maker", "Rome"]);
+  expect(results[2]).toEqual(["", "10", "Astronaut", "Florida"]);
+  expect(results[3]).toEqual(["Paula", "19", "Engineer", ""]);
+});
+
+test("parseCSV handles double quotes", async () => {
+  const results = await parseCSV(path.join(__dirname, "../data/people4.csv"));
+
+  expect(results).toHaveLength(2);
+  
+  expect(results[0]).toHaveLength(3);
+  expect(results[0]).toEqual(["Hello", "I said \"HI\"", "HELLO \"HI\" WORLD!!!"]);
+
+  expect(results[1]).toHaveLength(3);
+  expect(results[1]).toEqual(["You're out of \"touch\"", "I'm out of", "TIME"]);
+});
+
+
+
+
