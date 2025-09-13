@@ -65,7 +65,11 @@ Npm test to run the tests
 
 #### Collaborators (cslogins of anyone you worked with on this project and/or generative AI): 
 jgcasale, abodet, Samyak Jain (i dont know his cs login)
-I used LLMs in this sprint, mainly to help me come up with test cases and potential enhancements for the parser. When coming up with the 4 enhancements, I asked multiple LLMs (Copilot, ChatGPT, Gemini) to test the differences between their responses, and I found that feeding them the same prompt yielded very similar results. I also used Copilot to help me figure out schemas and Typescript syntax, as I was very confused on how to go about fixing the parseCSV function. 
+I used LLMs in this sprint, mainly to help me come up with test cases and potential enhancements for the parser. When coming up with the 4 enhancements, I asked Copilot multiple times to test the differences between responses, and I found that feeding them the same prompt yielded very similar results. I also used Copilot to help me figure out schemas and Typescript syntax, as I was very confused on how to go about fixing the parseCSV function. 
+
+Link to Copilot chat log: 
+https://docs.google.com/document/d/11mQXLXyqT9F9uZUn6YQUJzy6MyGDuyg3SKWhp75N_t4/edit?usp=sharing
+
 #### Total estimated time it took to complete project: 
 7-8 hours
 #### Link to GitHub Repo:  
