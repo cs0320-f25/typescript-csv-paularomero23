@@ -46,16 +46,25 @@
 ### 1340 Supplement
 
 - #### 1. Correctness
-
+A CSV parser is correct if it's able to transform/separate a CSV string into structured data. It needs to be able to correctly identify and separate rows/fields based on commas and line endings. It should also be able certain edge cases, like commas and/or double quotes within the field. A good CSV parser would also have other "features", like being able to handle malformed data, inconsistent numbers of fields, management of empty fields, etc.
 - #### 2. Random, On-Demand Generation
+Using randomly generated CSV data would help reveal certain edge cases and unexpected bugs that might have not appeared if I only used data I created myself. It would help ensure that the parser works for a wide variety of inputs, not just the ones I created. 
 
 - #### 3. Overall experience, Bugs encountered and resolved
-#### Errors/Bugs: I pushed to git a few times, but I don't think i did it correctly because only a few of them went through
+#### Errors/Bugs: 
+This sprint was quite confusing compared to other programming assignments I've done in the past (for CS15 and CS200). I think there were a lot of instructions to read through, yet I don't think they were clear enough, which was surprising.
+
+I pushed to git a few times, but I don't think i did it correctly because only a few of them went through
+
+I didn't encounter many bugs outside of trying to learn proper TypeScript syntax. That was probably what slowed me down the most besides trying to understand what the assignment was asking for.
 #### Tests:
-#### How To…
+#### How To… 
+Npm test to run the tests
 
 #### Team members and contributions (include cs logins):
 
-#### Collaborators (cslogins of anyone you worked with on this project and/or generative AI): jgcasale, abodet, Samyak Jain (i dont know his cs login)
-#### Total estimated time it took to complete project: 5 hours
+#### Collaborators (cslogins of anyone you worked with on this project and/or generative AI): 
+jgcasale, abodet, Samyak Jain (i dont know his cs login)
+#### Total estimated time it took to complete project: 
+7-8 hours
 #### Link to GitHub Repo:  
