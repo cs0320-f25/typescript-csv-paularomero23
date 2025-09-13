@@ -38,7 +38,7 @@
 
 
     Include your notes from above: what were your initial ideas, what did the LLM suggest, and how did the results differ by prompt? What resonated with you, and what didn’t? (3-5 sentences.) 
-    
+
     My suggestions overlapped quite well with the LLM's suggestions; we had a lot of the same ideas and suggestions, but the LLM was a bit more descriptive and "technical". The results did not really differ by prompt, the order or phrasing of the suggestions would be different, but it overall suggested the same ideas. I really resonated with the extensability improvements it suggested, I think if implemented, using the parser would be a far easier experience for the caller.
 
 ### Design Choices
@@ -56,6 +56,6 @@
 
 #### Team members and contributions (include cs logins):
 
-#### Collaborators (cslogins of anyone you worked with on this project and/or generative AI):
-#### Total estimated time it took to complete project:
+#### Collaborators (cslogins of anyone you worked with on this project and/or generative AI): jgcasale, abodet, Samyak Jain (i dont know his cs login)
+#### Total estimated time it took to complete project: 5 hours
 #### Link to GitHub Repo:  

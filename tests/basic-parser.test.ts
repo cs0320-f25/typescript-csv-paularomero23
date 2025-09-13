@@ -1,5 +1,6 @@
 import { parseCSV } from "../src/basic-parser";
 import * as path from "path";
+import { Schema, z } from "zod";
 
 const PEOPLE_CSV_PATH = path.join(__dirname, "../data/people.csv");
 
@@ -53,6 +54,28 @@ test("parseCSV handles double quotes", async () => {
   expect(results[1]).toEqual(["You're out of \"touch\"", "I'm out of", "TIME"]);
 });
 
+// creating a schema for people.csv (name, age)
+const peopleRowSchema = z.tuple([z.string(), z.coerce.number().min(0)]);
+
+test("parseCSV with schema success", () => {
+  expect(peopleRowSchema.safeParse(["Alice", 30]).success).toBe(true);
+});
+
+test("parseCSV with schema failure", () => {
+  expect(peopleRowSchema.safeParse(["Bob", "thirty"]).success).toBe(false);
+});
+
+
+// creating a schema for people2.csv (first name, last name, catchphrase?)
+const people2RowSchema = z.tuple([z.string(), z.string(), z.string()]);
+
+test("parseCSV people2 with schema success", () => {
+  expect(people2RowSchema.safeParse(['Caesar', 'Julius', 'veni, vidi, vici']).success).toBe(true);
+});
+
+test("parseCSV people2 with schema failure", () => {
+  expect(people2RowSchema.safeParse(['Caesar', 123, 'veni, vidi, vici']).success).toBe(false);
+});
 
 
 

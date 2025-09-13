@@ -46,5 +46,7 @@ export async function parseCSV<T>(path: string, schema?: z.ZodType<T>): Promise<
 }
 }
 
-const studentRowSchema = z.tuple([z.string(), z.number(), z.email()])
-.transform( arr => ({name: arr[0], credits: arr[1], email: arr[2]}) )
+// in class example
+// const studentRowSchema = z.tuple([z.string(), z.number(), z.email()])
+// .transform( arr => ({name: arr[0], credits: arr[1], email: arr[2]}) )
+
