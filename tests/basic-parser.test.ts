@@ -28,9 +28,7 @@ test("parseCSV fields with commas inside quotes", async () => {
 
   expect(results).toHaveLength(1);
   expect(results[0]).toHaveLength(3);
-  expect(results[0][0]).toEqual(["Caesar"]);
-  expect(results[0][1]).toEqual(["Julius"]);
-  expect(results[0][2]).toEqual(['veni, vidi, vici']);
+  expect(results[0]).toEqual(['Caesar', 'Julius', 'veni, vidi, vici']);
 });
 
 test("parseCSV handles empty files", async () => {
@@ -54,6 +52,7 @@ test("parseCSV handles double quotes", async () => {
   expect(results[1]).toHaveLength(3);
   expect(results[1]).toEqual(["You're out of \"touch\"", "I'm out of", "TIME"]);
 });
+
 
 
 
