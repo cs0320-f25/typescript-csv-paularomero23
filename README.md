@@ -50,7 +50,7 @@
 - #### 2. Random, On-Demand Generation
 
 - #### 3. Overall experience, Bugs encountered and resolved
-#### Errors/Bugs:
+#### Errors/Bugs: I pushed to git a few times, but I don't think i did it correctly because only a few of them went through
 #### Tests:
 #### How To…
 

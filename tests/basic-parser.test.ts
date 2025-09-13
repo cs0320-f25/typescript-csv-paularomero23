@@ -1,6 +1,6 @@
 import { parseCSV } from "../src/basic-parser";
 import * as path from "path";
-import { Schema, z } from "zod";
+import { z } from "zod";
 
 const PEOPLE_CSV_PATH = path.join(__dirname, "../data/people.csv");
 
@@ -74,9 +74,24 @@ test("parseCSV people2 with schema success", () => {
 });
 
 test("parseCSV people2 with schema failure", () => {
-  expect(people2RowSchema.safeParse(['Caesar', 123, 'veni, vidi, vici']).success).toBe(false);
+  expect(people2RowSchema.safeParse(['Caesar', 90210, 'veni, vidi, vici']).success).toBe(false);
 });
 
+test ("no schema provided returns string[][]", async () => {
+  const results = await parseCSV(PEOPLE_CSV_PATH);
 
+  expect(results).toHaveLength(5);
+  expect(results[0]).toEqual(["name", "age"]);
+});
 
+// this test fails, but I think I have to fix it in Sprint2
+test("parseCSV with schema returns parsed results", async () => {
+  const results = await parseCSV(PEOPLE_CSV_PATH, peopleRowSchema);
 
+  expect(results).toHaveLength(5);
+  expect(results[0]).toEqual({ name: "name", age: NaN });
+  expect(results[1]).toEqual({ name: "Alice", age: 23 });
+  expect(results[2]).toEqual({ name: "Bob", age: NaN });
+  expect(results[3]).toEqual({ name: "Charlie", age: 25 });
+  expect(results[4]).toEqual({ name: "Nim", age: 22 });
+});
