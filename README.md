@@ -68,3 +68,4 @@ jgcasale, abodet, Samyak Jain (i dont know his cs login)
 #### Total estimated time it took to complete project: 
 7-8 hours
 #### Link to GitHub Repo:  
+https://github.com/cs0320-f25/typescript-csv-paularomero23.git
